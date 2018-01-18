@@ -16,7 +16,7 @@ main(List<String> args) async {
       options: const ChannelOptions.secure());
   stub = new ImageAnnotatorClient(channel);
 
-  final apiKey = new File('api.key').readAsStringSync();
+  final apiKey = new File('api.key').readAsStringSync().trim();
   final authOption = new CallOptions(metadata: {'x-goog-api-key': apiKey});
 
   final imageSource = new ImageSource()
